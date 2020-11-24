@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++Proj",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g"
+                // "-fsanitize=address"
+                //"-Wall"
+                // "-O0"
+                // "-Wextra"
+                "-O0"
+                "katya_karlov.cpp"
+                "-o"
+                "katya_karlov"
+            ].
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }   
+        }
+    ]
+}

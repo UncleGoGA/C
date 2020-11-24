@@ -1,0 +1,3 @@
+Yuri Tomin Alex 40 25000 20.01.1980 
+Mean Lefon Dry 35 40000 01.12.1990  
+Test Test Test 20 13000 02.03.2019 
