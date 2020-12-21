@@ -44,6 +44,30 @@ vector<pair<int, int>> end_game(vector<pair<int, int>>& game) {
 	return res;
 }
 
+std::ostream& operator<<(std::ostream& os, std::pair<int, int> cur_pair) {
+	os << cur_pair.first << " - " << cur_pair.second << "\t";
+
+	return os;
+}
+
+std::ostream& operator<<(std::ostream& os, std::vector<std::pair<int, int>> game) {
+	std::pair<int, int> cur_pair;
+
+	for (auto i_it = game.begin(); i_it != game.end(); ++i_it) {
+		cur_pair = *i_it;
+		for (auto j_it = game.begin(); j_it != game.end(); ++j_it) {
+			if (j_it->first == cur_pair.second) {
+				os << cur_pair;
+				cur_pair = *j_it;
+				game.erase(i_it);
+			}
+		}
+		os << std::endl;
+	}
+
+	return os;
+}
+
 int main() {
 
 	vector<pair<int, int>> game, res;
@@ -55,10 +79,6 @@ int main() {
 		cout << "Smth went wrong" << "\n";
 	}
 
-
-	for (auto it = res.begin(); it != res.end(); ++it) {
-		cout << it->first << " " << it->second << "\n";
-	}
 
 	return 0;
 }
